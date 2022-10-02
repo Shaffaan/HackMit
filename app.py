@@ -18,7 +18,7 @@ def receive_controller():
     return "done", 200
     
 @app.route("/emit_controller", methods=["GET", "POST"])
-def emit_controller():
+def emit_controller():  
     global global_controller_data
     return global_controller_data
 
@@ -28,7 +28,7 @@ def receive_esp32():
     global_esp32_data = json.loads(request.data)
     return global_esp32_data
 
-@app.route("/emit_controller", methods=["GET", "POST"])
+@app.route("/emit_esp32", methods=["GET", "POST"])
 def emit_esp32():
     global global_esp32_data
     return global_esp32_data
